@@ -53,9 +53,11 @@ npm install
 Crea tu archivo .env con las configuraciones necesarias:
 ```bash
 # Variables de entorno para el servidor
-
 # Puerto del servidor
 PORT=3000
+
+# URL Base del servidor
+BASE_URL=http://localhost:3000
 
 # Nombre de la base de datos por defecto
 DATABASE_NAME=UrlShortener
