@@ -40,7 +40,7 @@ Este proyecto está compuesto por un **backend con Node.js y Express** y un **fr
 
 ### 1. Clona el repositorio
 ```bash
-git clone https://github.com/tu-usuario/url-shortener.git
+git clone git@github.com:julitoo14/url-shortener.git
 cd url-shortener
 ```
 
