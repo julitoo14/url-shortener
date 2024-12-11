@@ -57,6 +57,7 @@
 import { ref } from "vue";
 import axios from "axios";
 import Chart from "../components/Chart.vue";
+import { API_BASE_URL } from "../config";
 
 const idOrAlias = ref("");
 const stats = ref(null);
@@ -98,7 +99,7 @@ const fetchStats = async () => {
   try {
 
     const response = await axios.get(
-      `http://localhost:3000/api/metrics/${idOrAlias.value}`
+      `${API_BASE_URL}/metrics/${idOrAlias.value}`
     );
     stats.value = response.data;
     const clicksByCity = stats.value.clicksByCity;

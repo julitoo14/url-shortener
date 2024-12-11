@@ -50,6 +50,7 @@
   <script setup>
   import { ref, computed } from "vue";
   import axios from "axios";
+  import { API_BASE_URL } from "../config";
   
   const originalUrl = ref("");
   const alias = ref("");
@@ -66,7 +67,7 @@
   
   const handleSubmit = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/api/shorten", {
+      const response = await axios.post(`${API_BASE_URL}/shorten`, {
         longUrl: originalUrl.value,
         customAlias: alias.value,
       });

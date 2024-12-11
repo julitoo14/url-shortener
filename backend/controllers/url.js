@@ -80,9 +80,7 @@ const postUrl = async (req, res) => {
 
         res.status(201).json({
             message: "URL successfully shortened",
-            longUrl: newUrl.longUrl,
             shortUrl: newUrl.shortUrl,
-            customAlias: newUrl.customAlias
         });
     } catch (error) {
         console.error("Error al procesar la solicitud:", error);
@@ -117,22 +115,6 @@ const getMetrics = async (req, res) => {
             clicksByCity: stats.clicksByCity,
         });
     } else {
-        console.log('nop')
-        res.status(404).json({ error: "URL no encontrada" });
-    }
-}
-
-const getUrls = async (req, res) => {
-    const urls = await Url.find();
-    res.json(urls);
-}
-
-const deleteUrl = async (req, res) => {
-    const { id } = req.params;
-    const url = await Url.findByIdAndDelete(id);
-    if (url) {
-        res.json(url);
-    } else {
         res.status(404).json({ error: "URL no encontrada" });
     }
 }
@@ -140,7 +122,5 @@ const deleteUrl = async (req, res) => {
 module.exports = {
     getUrl,
     postUrl,
-    getMetrics,
-    getUrls,
-    deleteUrl
+    getMetrics
 }

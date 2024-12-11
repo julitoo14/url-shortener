@@ -1,19 +1,30 @@
 const mongoose = require('mongoose');
-var databaseName = 'UrlShortener';
-if(process.env.NODE_ENV === 'test'){
-    databaseName = 'testdb'
-}
-const password = process.env.PASSWORD;
+const dotenv = require('dotenv');
 
-const connection = async() =>{
-    try{
-        await mongoose.connect(`mongodb+srv://juuligarcia2208:0301@urlshortener.n62rwum.mongodb.net/`,
-        {dbName: databaseName});
-        console.log('Connected to Database ' + databaseName);
-    }catch(error){
-        console.log(error);
-        throw new Error("No se ha establecido la conexion a la base de datos");
-    }
+// Carga las variables de entorno
+dotenv.config();
+
+let databaseName = process.env.DATABASE_NAME;
+
+if (process.env.NODE_ENV === 'test') {
+  databaseName = process.env.TEST_DATABASE_NAME; // Usa la base de datos de pruebas si está en modo test
 }
+
+
+const connection = async () => {
+  try {
+    await mongoose.connect(
+      `${process.env.DB_URI_BASE}`,
+      {
+        dbName: databaseName,
+      }
+    );
+
+    console.log('Connected to Database: ' + databaseName);
+  } catch (error) {
+    console.error(error);
+    throw new Error('No se ha establecido la conexión a la base de datos');
+  }
+};
 
 module.exports = connection;
