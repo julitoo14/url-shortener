@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bg-main{
+  background-color: #F7F9FC;
+}
+
+.text-strong{
+  color: #4A90E2;
+}
+
+.bg-strong{
+  background-color: #4A90E2;
+}
+
+.bg-alt{
+  background-color: #50E3C2;
+}
+
+.hover-alt:hover{
+  color: #50E3C2;
+}
+
+.hover-bg-alt:hover{
+  background-color: #50E3C2;
+}
+
+.text-alt{
+  color: #50E3C2;
+}
+
+
+.text-main{
+  color: #333333;
+}
+
+.text-secondary{
+  color: #7F8C8D;
+}
+
+.text-alert{
+  color: #FF6B6B;
+}
+
+.bg-alert{
+  background-color: #FF6B6B;
+}
