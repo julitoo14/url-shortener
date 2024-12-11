@@ -52,8 +52,20 @@ npm install
 ```
 Crea tu archivo .env con las configuraciones necesarias:
 ```bash
+# Variables de entorno para el servidor
+
+# Puerto del servidor
 PORT=3000
-MONGO_URI=<tu_conexion_a_mongo>
+
+# Nombre de la base de datos por defecto
+DATABASE_NAME=UrlShortener
+
+# Base de datos para pruebas
+TEST_DATABASE_NAME=testdb
+
+# URI de la base de datos
+DB_URI_BASE=<tu_conexion_a_mongo>
+
 ```
 
 Inicia el servidor
