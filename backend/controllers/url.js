@@ -6,7 +6,8 @@ const getUrl = async (req, res) => {
     const { id } = req.params;
     console.log("Requested ID or Alias:", id);
   
-    const ip = '186.19.9.130'; // IP de prueba
+    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    console.log("Requesting IP:", ip);
     let ipInfo = {};
   
     try {
