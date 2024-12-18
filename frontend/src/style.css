@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-  overflow: hidden;
-}
-
-
 .bg-main{
   background-color: #F7F9FC;
 }
